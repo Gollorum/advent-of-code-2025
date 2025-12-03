@@ -1,7 +1,6 @@
 use arboard::Clipboard;
 use std::fs;
 use std::io;
-use std::path::Path;
 
 fn main() {
     // Get the file path from command line arguments
@@ -38,16 +37,12 @@ fn main() {
 }
 
 fn read_file(file_path: &str) -> io::Result<String> {
-    let path = Path::new(file_path);
-
-    if !path.exists() {
-        return Err(io::Error::new(
-            io::ErrorKind::NotFound,
-            format!("File not found: {}", file_path),
-        ));
-    }
-
-    fs::read_to_string(path)
+    fs::read_to_string(file_path).map_err(|e| {
+        io::Error::new(
+            e.kind(),
+            format!("Failed to read '{}': {}", file_path, e),
+        )
+    })
 }
 
 fn copy_to_clipboard(content: &str) -> Result<(), Box<dyn std::error::Error>> {
