@@ -6,8 +6,8 @@ mod day01;
 mod utils;
 
 fn main() {
-    let response = ErrorMsg::result_to_string(day01::run_sample());
-    println!("'{}'", &response);
+    let response = ErrorMsg::result_to_string(day01::run_part_2(true));
+    println!("{}", &response);
     copy_to_clipboard(&response).unwrap_or(());
 }
 
