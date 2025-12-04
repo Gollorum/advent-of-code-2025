@@ -5,9 +5,10 @@ use crate::utils::ErrorMsg;
 mod utils;
 mod day01;
 mod day02;
+mod day03;
 
 fn main() {
-    let response = ErrorMsg::result_to_string(day02::run_part_2(true));
+    let response = ErrorMsg::result_to_string(day03::run_part_2(true));
     println!("{}", &response);
     copy_to_clipboard(&response).unwrap_or(());
 }
