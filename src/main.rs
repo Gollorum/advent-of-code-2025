@@ -6,9 +6,10 @@ mod utils;
 mod day01;
 mod day02;
 mod day03;
+mod day04;
 
 fn main() {
-    let response = ErrorMsg::result_to_string(day03::run_part_2(true));
+    let response = ErrorMsg::result_to_string(day04::run_part_2(true));
     println!("{}", &response);
     copy_to_clipboard(&response).unwrap_or(());
 }
