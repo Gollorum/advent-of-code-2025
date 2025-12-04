@@ -2,11 +2,12 @@ extern crate core;
 use arboard::Clipboard;
 use crate::utils::ErrorMsg;
 
-mod day01;
 mod utils;
+mod day01;
+mod day02;
 
 fn main() {
-    let response = ErrorMsg::result_to_string(day01::run_part_2(true));
+    let response = ErrorMsg::result_to_string(day02::run_part_2(true));
     println!("{}", &response);
     copy_to_clipboard(&response).unwrap_or(());
 }

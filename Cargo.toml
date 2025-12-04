@@ -5,3 +5,4 @@ edition = "2024"
 
 [dependencies]
 arboard = "3.4"
+substring = "1.4.5"

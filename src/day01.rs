@@ -23,7 +23,7 @@ impl FromStr for Rotation {
     }
 }
 
-fn run_part_1(actual: bool) -> Result<String, ErrorMsg> {
+pub fn run_part_1(actual: bool) -> Result<String, ErrorMsg> {
     let mut password = 0;
     let mut position = 50;
 
@@ -39,7 +39,7 @@ fn run_part_1(actual: bool) -> Result<String, ErrorMsg> {
     Ok(password.to_string())
 }
 
-pub(crate) fn run_part_2(actual: bool) -> Result<String, ErrorMsg> {
+pub fn run_part_2(actual: bool) -> Result<String, ErrorMsg> {
     let mut password = 0;
     let mut position = 50;
 
