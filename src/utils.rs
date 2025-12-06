@@ -6,7 +6,7 @@ use std::path::Path;
 
 pub fn read_file(file_path: &str) -> io::Result<String> {
     fs::read_to_string(file_path)
-        .map(|content| content.trim().to_string())
+        .map(|content| content.to_string())
         .map_err(|e| {
             io::Error::new(
                 e.kind(),
