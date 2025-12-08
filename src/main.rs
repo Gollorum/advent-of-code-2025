@@ -10,9 +10,10 @@ mod day04;
 mod day05;
 mod day06;
 mod day07;
+mod day08;
 
 fn main() {
-    let response = ErrorMsg::result_to_string(day07::run_part_2(true));
+    let response = ErrorMsg::result_to_string(day08::run_part_2(true));
     println!("{}", &response);
     copy_to_clipboard(&response).unwrap_or(());
 }
