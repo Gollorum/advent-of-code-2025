@@ -57,3 +57,8 @@ impl From<&str> for ErrorMsg {
         ErrorMsg { wrapped: err.to_string() }
     }
 }
+impl From<regex::Error> for ErrorMsg {
+    fn from(err: regex::Error) -> Self {
+        ErrorMsg { wrapped: format!("Failed to compile regex: {}", err.to_string()) }
+    }
+}
